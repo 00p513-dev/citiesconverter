@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Cities Skylines Unit Converter</title>
+    <style>
+      body {
+        background-color: #1c1c1e;
+        color: #fafafe;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mainUI" class="w3-padding-large w3-center">
+      <h1>Cities Skylines Units Converter</h1>
+      <hr style="width: 50%; margin-left: 25%; border-top: 1px solid #333;">
+      <div class="w3-row">
+        <div class="w3-half">
+          <p>Units</p>
+          <input id="inputUnits" type="number" placeholder="Units" oninput="lengthConverter(this.id, this.value)" onchange="lengthConverter(this.id, this.value)">
+        </div>
+        <div class="w3-half">
+          <p>Meters</p>
+          <input id="inputMeters" type="number" placeholder="Meters" oninput="lengthConverter(this.id, this.value)" onchange="lengthConverter(this.id, this.value)">
+        </div>
+      </div>
+    </div>
+    <script>
+      /* When the input field receives input, convert the value from units to meters */
+      function lengthConverter(source, valNum) {
+        if (source == "inputUnits") {
+          document.getElementById("inputMeters").value = valNum * 8;
+          //console.log(valNum * 8);
+        } else if (source == "inputMeters") {
+          document.getElementById("inputUnits").value = valNum / 8;
+          //console.log(valNum * 8);
+        } else {
+          console.log("Confused");
+          console.log(source);
+        }
+      }
+    </script>
+  </body>
+</html>
